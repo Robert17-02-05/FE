@@ -1,0 +1,61 @@
+{
+  "vi": {
+    "common": {
+      "loading": "Đang tải...",
+      "error": "Đã có lỗi xảy ra",
+      "retry": "Thử lại",
+      "cancel": "Hủy",
+      "confirm": "Xác nhận",
+      "save": "Lưu",
+      "delete": "Xóa",
+      "edit": "Chỉnh sửa",
+      "search": "Tìm kiếm",
+      "back": "Quay lại",
+      "next": "Tiếp theo",
+      "prev": "Trước đó",
+      "submit": "Gửi",
+      "close": "Đóng",
+      "yes": "Có",
+      "no": "Không",
+      "success": "Thành công",
+      "welcome": "Chào mừng"
+    },
+    "auth": {
+      "login": "Đăng nhập",
+      "register": "Đăng ký",
+      "logout": "Đăng xuất",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "fullName": "Họ và tên",
+      "phone": "Số điện thoại",
+      "forgotPassword": "Quên mật khẩu?",
+      "rememberMe": "Ghi nhớ đăng nhập",
+      "loginSuccess": "Đăng nhập thành công!",
+      "logoutSuccess": "Đã đăng xuất.",
+      "registerSuccess": "Đăng ký thành công!"
+    },
+    "nav": {
+      "home": "Trang chủ",
+      "products": "Sản phẩm",
+      "blog": "Blog",
+      "about": "Giới thiệu",
+      "contact": "Liên hệ",
+      "dashboard": "Dashboard",
+      "profile": "Hồ sơ",
+      "settings": "Cài đặt",
+      "cart": "Giỏ hàng"
+    },
+    "errors": {
+      "required": "Trường này là bắt buộc",
+      "invalidEmail": "Email không hợp lệ",
+      "minLength": "Tối thiểu {{min}} ký tự",
+      "maxLength": "Tối đa {{max}} ký tự",
+      "passwordMismatch": "Mật khẩu không khớp",
+      "networkError": "Lỗi kết nối mạng",
+      "serverError": "Lỗi máy chủ",
+      "notFound": "Không tìm thấy",
+      "unauthorized": "Chưa đăng nhập"
+    }
+  }
+}

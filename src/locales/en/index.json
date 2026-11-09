@@ -1,0 +1,61 @@
+{
+  "en": {
+    "common": {
+      "loading": "Loading...",
+      "error": "An error occurred",
+      "retry": "Retry",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "search": "Search",
+      "back": "Back",
+      "next": "Next",
+      "prev": "Previous",
+      "submit": "Submit",
+      "close": "Close",
+      "yes": "Yes",
+      "no": "No",
+      "success": "Success",
+      "welcome": "Welcome"
+    },
+    "auth": {
+      "login": "Login",
+      "register": "Register",
+      "logout": "Logout",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "fullName": "Full Name",
+      "phone": "Phone Number",
+      "forgotPassword": "Forgot password?",
+      "rememberMe": "Remember me",
+      "loginSuccess": "Logged in successfully!",
+      "logoutSuccess": "Logged out.",
+      "registerSuccess": "Registered successfully!"
+    },
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "blog": "Blog",
+      "about": "About",
+      "contact": "Contact",
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "settings": "Settings",
+      "cart": "Cart"
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address",
+      "minLength": "Minimum {{min}} characters",
+      "maxLength": "Maximum {{max}} characters",
+      "passwordMismatch": "Passwords do not match",
+      "networkError": "Network error",
+      "serverError": "Server error",
+      "notFound": "Not found",
+      "unauthorized": "Unauthorized"
+    }
+  }
+}
