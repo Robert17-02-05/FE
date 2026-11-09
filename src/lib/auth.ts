@@ -1,49 +1,49 @@
-// ============================================================
-// auth.ts — Server-side session helper (Next.js)
-// Dùng trong Server Components và API routes
-// ============================================================
+// src/lib/auth.ts
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+
+export type Role = 'STUDENT' | 'EMPLOYER' | 'ADMIN';
 
 export interface Session {
   userId: string;
   email: string;
-  role: 'admin' | 'user' | 'moderator';
+  name: string;
+  role: Role;
 }
 
-/**
- * Lấy session từ cookie phía server
- * Dùng trong Server Components (layout, page)
- */
+const BACKEND_URL = process.env.BACKEND_URL ?? 'http://localhost:5173';
+
+/** Lấy session từ BE (Better Auth). Trả về null nếu chưa đăng nhập. */
 export async function getServerSession(): Promise<Session | null> {
   const cookieStore = await cookies();
-  const token = cookieStore.get('accessToken')?.value;
-  if (!token) return null;
+  const cookieHeader = cookieStore.toString();
+  if (!cookieHeader) return null;
 
   try {
-    // Verify token với backend hoặc dùng jose để verify JWT
-    // const payload = await verifyJWT(token);
-    // return payload as Session;
+    const res = await fetch(`${BACKEND_URL}/api/auth/get-session`, {
+      headers: { cookie: cookieHeader },
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
 
-    // Demo: return mock session
+    const data = await res.json();
+    if (!data?.user) return null;
+
     return {
-      userId: '1',
-      email: 'user@example.com',
-      role: 'user',
+      userId: data.user.id,
+      email: data.user.email,
+      name: data.user.name,
+      role: data.user.role,
     };
   } catch {
     return null;
   }
 }
 
-/**
- * Require session — throw redirect nếu chưa đăng nhập
- * Dùng trong protected page/layout
- */
-export async function requireSession(): Promise<Session> {
+/** Bắt buộc đăng nhập (và đúng vai trò nếu truyền vào). */
+export async function requireSession(allowedRoles?: Role[]): Promise<Session> {
   const session = await getServerSession();
-  if (!session) {
-    const { redirect } = await import('next/navigation');
-    redirect('/login');
-  }
+  if (!session) redirect('/login');
+  if (allowedRoles && !allowedRoles.includes(session.role)) redirect('/');
   return session;
 }
